@@ -1,8 +1,11 @@
 {
   "manifest_version": 3,
   "name": "Matcha garden for Claude",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A calm matcha-green look for claude.ai, matching the Matcha garden desktop theme.",
+  "permissions": ["alarms", "storage", "scripting"],
+  "host_permissions": ["https://claude.ai/*"],
+  "background": { "service_worker": "reload.js" },
   "content_scripts": [
     {
       "matches": ["https://claude.ai/*"],

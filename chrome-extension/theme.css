@@ -55,8 +55,8 @@
   --cds-text-primary: #E4EAD8 !important;
   --cds-text-secondary: #C3CCB2 !important;
   --cds-text-muted: #A4AD95 !important;
-  --cds-text-accent: #A3C06A !important;
-  --cds-fill-accent: #7E9C48 !important;
+  --cds-text-accent: #889870 !important;
+  --cds-fill-accent: #5E7046 !important;
   --cds-fill-primary: #E4EAD8 !important;
   --cds-on-primary: #1C2219 !important;
   --cds-border: rgba(228, 234, 216, 0.09) !important;
@@ -98,8 +98,8 @@
   --cds-text-primary: #E4EAD8 !important;
   --cds-text-secondary: #C3CCB2 !important;
   --cds-text-muted: #A4AD95 !important;
-  --cds-text-accent: #A3C06A !important;
-  --cds-fill-accent: #7E9C48 !important;
+  --cds-text-accent: #889870 !important;
+  --cds-fill-accent: #5E7046 !important;
   --cds-fill-primary: #E4EAD8 !important;
   --cds-on-primary: #1C2219 !important;
   --cds-border: rgba(228, 234, 216, 0.09) !important;
@@ -147,9 +147,9 @@ main.dframe-content { isolation: isolate; }
 
 /* Leaf colors, one step darker in light mode, deep tea greens in dark mode. */
 #matcha-garden-plants { --l1: #A2B784; --l2: #8CA36D; --l3: #B5C69B; --stem: #7E9462; --p1: #C8604A; --p2: #B04E3A; --shade: rgba(94, 106, 76, 0.3); }
-:root[data-mode="dark"] #matcha-garden-plants { --l1: #3F5434; --l2: #4C6440; --l3: #34462B; --stem: #5A7148; --p1: #9A4A3A; --p2: #7E3B2E; --shade: rgba(0, 0, 0, 0.35); }
+:root[data-mode="dark"] #matcha-garden-plants { --l1: #2A3527; --l2: #323F2E; --l3: #242E22; --stem: #3C4836; --p1: #9A4A3A; --p2: #7E3B2E; --shade: rgba(0, 0, 0, 0.35); }
 @media (prefers-color-scheme: dark) {
-  :root[data-mode="system"] #matcha-garden-plants { --l1: #3F5434; --l2: #4C6440; --l3: #34462B; --stem: #5A7148; --p1: #9A4A3A; --p2: #7E3B2E; --shade: rgba(0, 0, 0, 0.35); }
+  :root[data-mode="system"] #matcha-garden-plants { --l1: #2A3527; --l2: #323F2E; --l3: #242E22; --stem: #3C4836; --p1: #9A4A3A; --p2: #7E3B2E; --shade: rgba(0, 0, 0, 0.35); }
 }
 #matcha-garden-plants .l1 { fill: var(--l1); }
 #matcha-garden-plants .l2 { fill: var(--l2); }

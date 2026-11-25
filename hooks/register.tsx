@@ -20,6 +20,8 @@ const { theme, problems } = makeColors({
     },
   },
   dark: {
+    // A deeper, ink-dark matcha so the greens don't glow on the dark ground.
+    roles: { accent: '#5E7046' },
     gray: {
       anchors: {
         'surface-0': '#1C2219',

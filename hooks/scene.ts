@@ -15,10 +15,10 @@ export const SCENE = `<svg xmlns="http://www.w3.org/2000/svg" width="100%" heigh
 @keyframes sway { 0%, 100% { transform: rotate(-1.2deg); } 50% { transform: rotate(1.4deg); } }
 @media (prefers-color-scheme: dark) {
   .ground { fill: #1C2219; }
-  .l1 { fill: #3F5434; }
-  .l2 { fill: #4C6440; }
-  .l3 { fill: #34462B; }
-  .stem { stroke: #5A7148; }
+  .l1 { fill: #2A3527; }
+  .l2 { fill: #323F2E; }
+  .l3 { fill: #242E22; }
+  .stem { stroke: #3C4836; }
   .petal { fill: #9A4A3A; }
   .petal2 { fill: #7E3B2E; }
 }

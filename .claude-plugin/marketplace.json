@@ -1,0 +1,5 @@
+{
+  "name": "claude-theme-matcha-garden",
+  "owner": { "name": "hojokuru-kano" },
+  "plugins": [{ "name": "matcha-garden", "source": "./" }]
+}

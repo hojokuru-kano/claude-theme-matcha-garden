@@ -1,0 +1,160 @@
+/* Matcha garden for claude.ai: the same palette as the desktop theme. */
+:root.cds-root,
+:root.cds-root[data-mode="light"],
+:root.cds-root .cds-root:not([data-mode="dark"]) {
+  --cds-surface-0: #E8EBDA !important;
+  --cds-surface-1: #F4F5EA !important;
+  --cds-surface-2: #FBFBF5 !important;
+  --cds-surface-3: #FDFDF8 !important;
+  --cds-surface-panel: #FBFBF5 !important;
+  --cds-surface-popover: #FBFBF5 !important;
+  --cds-page-bg: #F4F5EA !important;
+  --cds-text-primary: #2C3524 !important;
+  --cds-text-secondary: #4F5A43 !important;
+  --cds-text-muted: #6B7360 !important;
+  --cds-text-accent: #55702A !important;
+  --cds-fill-accent: #5F7A30 !important;
+  --cds-fill-primary: #2C3524 !important;
+  --cds-on-primary: #F7F7EE !important;
+  --cds-border: rgba(44, 53, 36, 0.12) !important;
+  --cds-border-strong: rgba(44, 53, 36, 0.22) !important;
+  --cds-border-stronger: rgba(44, 53, 36, 0.4) !important;
+  --cds-fill-field: rgba(255, 255, 255, 0.55) !important;
+  --cds-fill-ghost-hover: rgba(44, 53, 36, 0.06) !important;
+  --cds-fill-ghost-selected: rgba(44, 53, 36, 0.12) !important;
+  --cds-fill-secondary: rgba(44, 53, 36, 0.08) !important;
+  --cds-fill-control: rgba(44, 53, 36, 0.1) !important;
+  --bg-000: 60.0 42.9% 97.3% !important;
+  --bg-100: 65.5 35.5% 93.9% !important;
+  --bg-200: 68.6 31.8% 91.4% !important;
+  --bg-300: 70.6 29.8% 88.8% !important;
+  --bg-400: 72.0 27.8% 85.9% !important;
+  --bg-500: 73.0 26.4% 82.9% !important;
+  --text-000: 91.8 19.1% 17.5% !important;
+  --text-100: 91.8 19.1% 17.5% !important;
+  --text-200: 88.7 14.6% 30.8% !important;
+  --text-300: 88.7 14.6% 30.8% !important;
+  --text-400: 85.3 9.0% 41.4% !important;
+  --text-500: 85.3 9.0% 41.4% !important;
+  --border-100: 91.8 19.1% 17.5% !important;
+  --border-200: 91.8 19.1% 17.5% !important;
+  --border-300: 91.8 19.1% 17.5% !important;
+  --border-400: 91.8 19.1% 17.5% !important;
+  --mg-page: #F4F5EA;
+}
+:root.cds-root[data-mode="dark"],
+:root.cds-root[data-mode="dark"] .cds-root,
+:root.cds-root .cds-dark-scope[data-mode="dark"] {
+  --cds-surface-0: #151A12 !important;
+  --cds-surface-1: #1C2219 !important;
+  --cds-surface-2: #232A20 !important;
+  --cds-surface-3: #2A3226 !important;
+  --cds-surface-panel: #232A20 !important;
+  --cds-surface-popover: #303A2B !important;
+  --cds-page-bg: #1C2219 !important;
+  --cds-text-primary: #E4EAD8 !important;
+  --cds-text-secondary: #C3CCB2 !important;
+  --cds-text-muted: #A4AD95 !important;
+  --cds-text-accent: #A3C06A !important;
+  --cds-fill-accent: #7E9C48 !important;
+  --cds-fill-primary: #E4EAD8 !important;
+  --cds-on-primary: #1C2219 !important;
+  --cds-border: rgba(228, 234, 216, 0.09) !important;
+  --cds-border-strong: rgba(228, 234, 216, 0.22) !important;
+  --cds-border-stronger: rgba(228, 234, 216, 0.4) !important;
+  --cds-fill-field: rgba(228, 234, 216, 0.05) !important;
+  --cds-fill-ghost-hover: rgba(228, 234, 216, 0.06) !important;
+  --cds-fill-ghost-selected: rgba(228, 234, 216, 0.12) !important;
+  --cds-fill-secondary: rgba(228, 234, 216, 0.08) !important;
+  --cds-fill-control: rgba(228, 234, 216, 0.1) !important;
+  --bg-000: 100.0 13.6% 17.3% !important;
+  --bg-100: 100.0 15.3% 11.6% !important;
+  --bg-200: 100.0 17.0% 10.4% !important;
+  --bg-300: 97.5 18.2% 8.6% !important;
+  --bg-400: 94.3 18.9% 7.3% !important;
+  --bg-500: 94.3 18.9% 7.3% !important;
+  --text-000: 80.0 30.0% 88.2% !important;
+  --text-100: 80.0 30.0% 88.2% !important;
+  --text-200: 80.8 20.3% 74.9% !important;
+  --text-300: 80.8 20.3% 74.9% !important;
+  --text-400: 82.5 12.8% 63.1% !important;
+  --text-500: 82.5 12.8% 63.1% !important;
+  --border-100: 80.0 30.0% 88.2% !important;
+  --border-200: 80.0 30.0% 88.2% !important;
+  --border-300: 80.0 30.0% 88.2% !important;
+  --border-400: 80.0 30.0% 88.2% !important;
+  --mg-page: #1C2219;
+}
+@media (prefers-color-scheme: dark) {
+  :root.cds-root[data-mode="system"],
+  :root.cds-root[data-mode="system"] .cds-root {
+  --cds-surface-0: #151A12 !important;
+  --cds-surface-1: #1C2219 !important;
+  --cds-surface-2: #232A20 !important;
+  --cds-surface-3: #2A3226 !important;
+  --cds-surface-panel: #232A20 !important;
+  --cds-surface-popover: #303A2B !important;
+  --cds-page-bg: #1C2219 !important;
+  --cds-text-primary: #E4EAD8 !important;
+  --cds-text-secondary: #C3CCB2 !important;
+  --cds-text-muted: #A4AD95 !important;
+  --cds-text-accent: #A3C06A !important;
+  --cds-fill-accent: #7E9C48 !important;
+  --cds-fill-primary: #E4EAD8 !important;
+  --cds-on-primary: #1C2219 !important;
+  --cds-border: rgba(228, 234, 216, 0.09) !important;
+  --cds-border-strong: rgba(228, 234, 216, 0.22) !important;
+  --cds-border-stronger: rgba(228, 234, 216, 0.4) !important;
+  --cds-fill-field: rgba(228, 234, 216, 0.05) !important;
+  --cds-fill-ghost-hover: rgba(228, 234, 216, 0.06) !important;
+  --cds-fill-ghost-selected: rgba(228, 234, 216, 0.12) !important;
+  --cds-fill-secondary: rgba(228, 234, 216, 0.08) !important;
+  --cds-fill-control: rgba(228, 234, 216, 0.1) !important;
+  --bg-000: 100.0 13.6% 17.3% !important;
+  --bg-100: 100.0 15.3% 11.6% !important;
+  --bg-200: 100.0 17.0% 10.4% !important;
+  --bg-300: 97.5 18.2% 8.6% !important;
+  --bg-400: 94.3 18.9% 7.3% !important;
+  --bg-500: 94.3 18.9% 7.3% !important;
+  --text-000: 80.0 30.0% 88.2% !important;
+  --text-100: 80.0 30.0% 88.2% !important;
+  --text-200: 80.8 20.3% 74.9% !important;
+  --text-300: 80.8 20.3% 74.9% !important;
+  --text-400: 82.5 12.8% 63.1% !important;
+  --text-500: 82.5 12.8% 63.1% !important;
+  --border-100: 80.0 30.0% 88.2% !important;
+  --border-200: 80.0 30.0% 88.2% !important;
+  --border-300: 80.0 30.0% 88.2% !important;
+  --border-400: 80.0 30.0% 88.2% !important;
+  --mg-page: #1C2219;
+  }
+}
+body { background-color: var(--cds-surface-1) !important; }
+/* The sidebar card paints its own gray; give it the theme's panel color. */
+html .dframe-root .dframe-sidebar { background: var(--cds-surface-2) !important; }
+
+/* Plants in the margins: drawn over the page but never catching the pointer. */
+#matcha-garden-plants { position: fixed; inset: 0; pointer-events: none; z-index: 5; }
+#matcha-garden-plants svg { position: absolute; bottom: 0; height: auto; }
+#matcha-garden-plants .mg-left { left: calc(var(--mg-sidebar, 0px) + 8px); width: 118px; }
+#matcha-garden-plants .mg-right-top { top: 0; bottom: auto; right: 0; width: 92px; }
+#matcha-garden-plants .mg-right { right: 0; width: 120px; }
+@media (max-width: 900px) { #matcha-garden-plants { display: none; } }
+
+/* Leaf colors, one step darker in light mode, deep tea greens in dark mode. */
+#matcha-garden-plants { --l1: #A2B784; --l2: #8CA36D; --l3: #B5C69B; --stem: #7E9462; --p1: #C8604A; --p2: #B04E3A; --shade: rgba(94, 106, 76, 0.3); }
+:root[data-mode="dark"] #matcha-garden-plants { --l1: #3F5434; --l2: #4C6440; --l3: #34462B; --stem: #5A7148; --p1: #9A4A3A; --p2: #7E3B2E; --shade: rgba(0, 0, 0, 0.35); }
+@media (prefers-color-scheme: dark) {
+  :root[data-mode="system"] #matcha-garden-plants { --l1: #3F5434; --l2: #4C6440; --l3: #34462B; --stem: #5A7148; --p1: #9A4A3A; --p2: #7E3B2E; --shade: rgba(0, 0, 0, 0.35); }
+}
+#matcha-garden-plants .l1 { fill: var(--l1); }
+#matcha-garden-plants .l2 { fill: var(--l2); }
+#matcha-garden-plants .l3 { fill: var(--l3); }
+#matcha-garden-plants .stem { stroke: var(--stem); fill: none; stroke-linecap: round; }
+#matcha-garden-plants .p1 { fill: var(--p1); }
+#matcha-garden-plants .p2 { fill: var(--p2); }
+#matcha-garden-plants g { filter: drop-shadow(5px 6px 0 var(--shade)); }
+#matcha-garden-plants .sway { transform-box: fill-box; transform-origin: 50% 100%; animation: mg-sway 11s ease-in-out infinite; }
+#matcha-garden-plants .hang { transform-box: fill-box; transform-origin: 100% 0%; animation: mg-sway 15s ease-in-out infinite reverse; }
+@keyframes mg-sway { 0%, 100% { transform: rotate(-1.2deg); } 50% { transform: rotate(1.4deg); } }
+@media (prefers-reduced-motion: reduce) { #matcha-garden-plants .sway, #matcha-garden-plants .hang { animation: none; } }

@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Matcha garden for Claude",
+  "version": "0.1.0",
+  "description": "A calm matcha-green look for claude.ai, matching the Matcha garden desktop theme.",
+  "content_scripts": [
+    {
+      "matches": ["https://claude.ai/*"],
+      "css": ["theme.css"],
+      "js": ["plants.js"],
+      "run_at": "document_start"
+    }
+  ]
+}

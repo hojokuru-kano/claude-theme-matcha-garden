@@ -133,12 +133,16 @@ body { background-color: var(--cds-surface-1) !important; }
 /* The sidebar card paints its own gray; give it the theme's panel color. */
 html .dframe-root .dframe-sidebar { background: var(--cds-surface-2) !important; }
 
-/* Plants in the margins: drawn over the page but never catching the pointer. */
-#matcha-garden-plants { position: fixed; inset: 0; pointer-events: none; z-index: 5; }
+/* Plants in the margins, behind the page: the layer lives inside the main
+   column, under its text, composer and notices but over its own fill. */
+main.dframe-content { isolation: isolate; }
+#matcha-garden-plants { position: fixed; inset: 0; pointer-events: none; z-index: -1; }
 #matcha-garden-plants svg { position: absolute; bottom: 0; height: auto; }
-#matcha-garden-plants .mg-left { left: calc(var(--mg-sidebar, 0px) + 8px); width: 118px; }
-#matcha-garden-plants .mg-right-top { top: 0; bottom: auto; right: 0; width: 92px; }
-#matcha-garden-plants .mg-right { right: 0; width: 120px; }
+#matcha-garden-plants .mg-left { left: calc(var(--mg-sidebar, 0px) + 8px); width: var(--mg-left-w, 118px); }
+#matcha-garden-plants .mg-right-top { top: 0; bottom: auto; right: 0; width: var(--mg-right-top-w, 92px); }
+#matcha-garden-plants .mg-right { right: 0; width: var(--mg-right-w, 120px); }
+/* Too little room beside the chat column: that plant steps out. */
+#matcha-garden-plants svg.mg-off { display: none; }
 @media (max-width: 900px) { #matcha-garden-plants { display: none; } }
 
 /* Leaf colors, one step darker in light mode, deep tea greens in dark mode. */

@@ -37,34 +37,99 @@
 
   const root = document.documentElement
 
-  // Where the sidebar card ends, so the left plant starts just past it.
-  function syncSidebar() {
+  // Full width of each plant and its height per pixel of width (from its viewBox).
+  const FULL = { 'mg-left': [118, 560 / 260], 'mg-right-top': [92, 390 / 180], 'mg-right': [120, 270 / 170] }
+  const GAP = 8
+  const MIN = 48
+  // The top bar paints over the plants already, so its buttons don't count.
+  const BAR = 48
+  // Things a plant must never sit behind: text, controls, the composer, notices.
+  const CONTENT = 'p, h1, h2, h3, h4, li, pre, table, button, a, fieldset, [role="alert"], [role="status"]'
+
+  // How far content reaches into a horizontal band of the window.
+  function reach(boxes, top, bottom) {
+    let left = Infinity
+    let right = -Infinity
+    for (const box of boxes) {
+      if (box.bottom > top && box.top < bottom) {
+        left = Math.min(left, box.left)
+        right = Math.max(right, box.right)
+      }
+    }
+    return { left, right }
+  }
+
+  // Give a plant the room beside the page's content: full size when it fits,
+  // smaller when the margin is narrow, gone when there is hardly any.
+  function size(layer, name, room) {
+    const svg = layer.querySelector(`.${name}`)
+    if (!svg) {
+      return
+    }
+    const width = Math.min(FULL[name][0], Math.floor(room - GAP))
+    svg.classList.toggle('mg-off', width < MIN)
+    root.style.setProperty(`--${name}-w`, `${Math.max(width, MIN)}px`)
+  }
+
+  // Where the sidebar card ends, so the left plant starts just past it, and
+  // how much room the content leaves beside each plant.
+  function sync() {
     const sidebar = document.querySelector('.dframe-sidebar')
     const collapsed = document.querySelector('.dframe-root[data-collapsed]') !== null
     const edge = sidebar && !collapsed ? Math.round(sidebar.getBoundingClientRect().right) : 0
     root.style.setProperty('--mg-sidebar', `${edge}px`)
-  }
 
-  function mount() {
-    if (document.getElementById('matcha-garden-plants') || !document.body) {
+    const layer = document.getElementById('matcha-garden-plants')
+    const main = layer && layer.parentElement
+    if (!main) {
       return
     }
-    const layer = document.createElement('div')
-    layer.id = 'matcha-garden-plants'
-    layer.innerHTML = LEFT + RIGHT_TOP + RIGHT
-    document.body.appendChild(layer)
+    const boxes = []
+    for (const el of main.querySelectorAll(CONTENT)) {
+      const box = el.getBoundingClientRect()
+      // Skip 1px screen-reader regions; they show nothing.
+      if (box.width > 4 && box.height > 4 && box.bottom > BAR && box.top < innerHeight) {
+        boxes.push(box)
+      }
+    }
+    const h = innerHeight
+    const band = (name) => FULL[name][0] * FULL[name][1]
+    const left = reach(boxes, h - band('mg-left'), h)
+    const rightTop = reach(boxes, 0, band('mg-right-top'))
+    const right = reach(boxes, h - band('mg-right'), h)
+    size(layer, 'mg-left', left.left - edge - GAP)
+    size(layer, 'mg-right-top', innerWidth - rightTop.right)
+    size(layer, 'mg-right', innerWidth - right.right)
   }
 
-  addEventListener('resize', syncSidebar)
+  // The layer sits first inside the main column so it paints behind it.
+  function mount() {
+    const main = document.querySelector('main.dframe-content')
+    if (!main) {
+      return
+    }
+    let layer = document.getElementById('matcha-garden-plants')
+    if (layer && layer.parentElement === main) {
+      return
+    }
+    if (!layer) {
+      layer = document.createElement('div')
+      layer.id = 'matcha-garden-plants'
+      layer.innerHTML = LEFT + RIGHT_TOP + RIGHT
+    }
+    main.prepend(layer)
+    sync()
+  }
+
+  addEventListener('resize', sync)
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', mount)
   } else {
     mount()
   }
-  // The app can replace <body> content; put the plants back if they go.
-  new MutationObserver(mount).observe(document.documentElement, { childList: true, subtree: false })
+  // The app can replace the main column; put the plants back if they go.
   setInterval(() => {
     mount()
-    syncSidebar()
+    sync()
   }, 1000)
 })()
